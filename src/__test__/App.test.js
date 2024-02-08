@@ -8,6 +8,8 @@ import book from "../data/fantasy.json";
 //   expect(linkElement).toBeInTheDocument();
 // });
 
+//ESERCIZIO 1
+
 describe("General mounting", () => {
   // voglio controllare ce Welcome è nella pagina
   it("correctly mount Welcome", () => {
@@ -18,6 +20,14 @@ describe("General mounting", () => {
     //PUNTO 3: il punto 3 al momento non ce perche non è interattivo
     //PUNTO 4: Welcome dovrebbe essere nel VIRTUAL DOM ( si spera...)
     expect(welcome).toBeInTheDocument();
+  });
+
+  //ESERCIZIO 3
+
+  it("correctly mount CommentArea", () => {
+    render(<App />);
+    const label = screen.getByText(/recensione/i);
+    expect(label).toBeInTheDocument();
   });
 });
 
